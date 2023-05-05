@@ -42,8 +42,8 @@ class CalcularPromedioCursoRxTest {
     @Test
     @DisplayName("Soy el test para Mono y ReactiveRx")
     void calculaPromedio(){
-        CalcularPromedioCursoRx sut = new CalcularPromedioCursoRx();
-        sut.calcularPromedio(CURSO)
+        CalcularPromedioCursoRx promedio = new CalcularPromedioCursoRx();
+        promedio.calcularPromedio(CURSO)
                 .subscribe(v -> assertThat(v).isEqualTo(5.6, within(0.1)));
 
     }

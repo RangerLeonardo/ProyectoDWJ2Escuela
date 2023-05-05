@@ -11,8 +11,7 @@ import reactor.core.publisher.Mono;
 @Component
 public class CalcularPromedioCursoRx {
 
-
-    public Mono<Double> calcularPromedio(Curso curso){
+    public Mono<Double>calcularPromedio (Curso curso){
 
         return Flux.fromStream(curso.getCalificaciones().values().parallelStream())
                 .collect(Collectors.averagingDouble(i -> (double) i));
