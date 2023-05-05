@@ -27,6 +27,7 @@ public class Curso {
     @MapKeyJoinColumn(name = "estudiantes_fk", referencedColumnName = "id")
     private Map<Estudiante, Integer> calificaciones;
 
+
     public Long getId() {
         return id;
     }

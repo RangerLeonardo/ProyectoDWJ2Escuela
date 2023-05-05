@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class PostWork2{
+public class CrearCurso {
 
         private static Curso crearCurso(Random random, String nombreMateria, long idCurso) {
                 Curso curso1 = new Curso();

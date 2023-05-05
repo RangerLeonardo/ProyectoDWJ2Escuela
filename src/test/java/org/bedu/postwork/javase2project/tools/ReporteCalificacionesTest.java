@@ -27,23 +27,23 @@ class ReporteCalificacionesTest {
     static{
         MATERIA.setNombre("Matemáticas");
 
-        ESTUDIANTE_1.setNombreCompleto("ccc");
-        ESTUDIANTE_2.setNombreCompleto("bbb");
-        ESTUDIANTE_3.setNombreCompleto("aaa");
+        ESTUDIANTE_1.setNombreCompleto("Brandon Adata");
+        ESTUDIANTE_2.setNombreCompleto("Leonardo Barrera");
+        ESTUDIANTE_3.setNombreCompleto("Juanito Alcachofa");
 
-        CURSO.setCiclo("2030");
+        CURSO.setCiclo("2024");
         CURSO.setMateria(MATERIA);
 
         Map<Estudiante,Integer> calificaciones = new HashMap<>();
-        calificaciones.put(ESTUDIANTE_1, 8);
-        calificaciones.put(ESTUDIANTE_2, 5);
-        calificaciones.put(ESTUDIANTE_3, 10);
+        calificaciones.put(ESTUDIANTE_1, 9);
+        calificaciones.put(ESTUDIANTE_2, 7);
+        calificaciones.put(ESTUDIANTE_3, 8);
 
         CURSO.setCalificaciones(calificaciones);
 
-        reporte1 = new ReporteCalificaciones.Reporte("ccc", 8);
-        reporte2 = new ReporteCalificaciones.Reporte("bbb", 5);
-        reporte3 = new ReporteCalificaciones.Reporte("aaa", 10);
+        reporte1 = new ReporteCalificaciones.Reporte("Brandon Adata", 9);
+        reporte2 = new ReporteCalificaciones.Reporte("Leonardo Barrera", 7);
+        reporte3 = new ReporteCalificaciones.Reporte("Juanito Alcachofa", 8);
 
 
     }
@@ -53,7 +53,7 @@ class ReporteCalificacionesTest {
     void alfabetico(){
         ReporteCalificaciones reporteCalificaciones = new ReporteCalificaciones();
 
-        assertThat(reporteCalificaciones.ordenarAlfabeticamente(CURSO)).containsExactly(reporte3, reporte2, reporte1);
+        assertThat(reporteCalificaciones.ordenarAlfabeticamente(CURSO)).containsExactly(reporte1, reporte3, reporte2);
     }
 
 
@@ -62,7 +62,7 @@ class ReporteCalificacionesTest {
     void calificaciones(){
         ReporteCalificaciones reporteCalificaciones = new ReporteCalificaciones();
 
-        assertThat(reporteCalificaciones.ordenarCalificaciones(CURSO)).containsExactly(reporte3, reporte1, reporte2);
+        assertThat(reporteCalificaciones.ordenarCalificaciones(CURSO)).containsExactly(reporte1, reporte3, reporte2);
     }
 
 }

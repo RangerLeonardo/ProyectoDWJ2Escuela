@@ -1,6 +1,6 @@
-package org.bedu.postwork.javase2project.repositories;
+package org.bedu.postwork.javase2project.persistence;
 
-import org.bedu.postwork.javase2project.model.Estudiante;
+import org.bedu.postwork.javase2project.model.Materia;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,24 +17,23 @@ import static org.junit.jupiter.api.Assertions.*;
 @ComponentScan(basePackages = "org.bedu.postwork.javase2project")
 @ExtendWith(SpringExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class EstudianteRepositoryTest {
+class MateriaRepositoryTet {
 
     @Autowired
-    private EstudianteRepository repository;
+    private MateriaRepository repository;
 
     @BeforeAll
     void cleanDatabase(){
         repository.deleteAll();
     }
     @Test
-    @DisplayName("Estudiante Guardado")
+    @DisplayName("Materia Guardada")
     void canSave(){
-        Estudiante estudiante1 = new Estudiante();
-        estudiante1.setNombreCompleto("Brandon Leonardo Adata Barrera");
-        estudiante1 = repository.save(estudiante1);
-        System.out.println(estudiante1.getNombreCompleto());
-        assertNotNull(estudiante1.getId());
+        Materia materia1 = new Materia();
+        materia1.setNombre("Matematicas");
+        materia1 = repository.save(materia1);
+        System.out.println(materia1.getNombre());
+        assertNotNull(materia1.getId());
 
     }
-
 }

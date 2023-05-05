@@ -1,4 +1,4 @@
-package org.bedu.postwork.javase2project.repositories;
+package org.bedu.postwork.javase2project.persistence;
 
 import org.bedu.postwork.javase2project.model.Estudiante;
 import org.springframework.data.repository.CrudRepository;

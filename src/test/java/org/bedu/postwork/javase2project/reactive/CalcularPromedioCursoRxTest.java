@@ -18,35 +18,33 @@ class CalcularPromedioCursoRxTest {
 
     static {
         Estudiante estudiante1 = new Estudiante();
-        estudiante1.setNombreCompleto("Estudiante Uno");
-
         Estudiante estudiante2 = new Estudiante();
-        estudiante2.setNombreCompleto("Estudiante Dos");
-
         Estudiante estudiante3 = new Estudiante();
-        estudiante3.setNombreCompleto("Estudiante Tres");
+
+        estudiante1.setNombreCompleto("Brandon Adata");
+        estudiante2.setNombreCompleto("Leonardo Barrera");
+        estudiante3.setNombreCompleto("Juanito Alcachofa");
 
         Materia materia = new Materia();
-        materia.setNombre("Materia");
+        materia.setNombre("Historia");
 
-        CURSO.setCiclo("2030");
+        CURSO.setCiclo("2024");
         CURSO.setMateria(materia);
 
         Map<Estudiante, Integer> calificaciones = new HashMap<>();
-        calificaciones.put(estudiante1, 5);
+        calificaciones.put(estudiante1, 9);
         calificaciones.put(estudiante2, 8);
-        calificaciones.put(estudiante3, 10);
+        calificaciones.put(estudiante3, 0);
 
         CURSO.setCalificaciones(calificaciones);
     }
 
     @Test
-    @DisplayName("Mono y ReactiveRx Test")
+    @DisplayName("Soy el test para Mono y ReactiveRx")
     void calculaPromedio(){
         CalcularPromedioCursoRx sut = new CalcularPromedioCursoRx();
-
         sut.calcularPromedio(CURSO)
-                .subscribe(v -> assertThat(v).isEqualTo(7.66, within(0.1)));
+                .subscribe(v -> assertThat(v).isEqualTo(5.6, within(0.1)));
 
     }
 
